@@ -189,6 +189,11 @@
 		"to_industrial_sup_cost": 20.0,
 		"to_industrial_mp_cost": 15.0
 	},
+	"cell_names": {
+		"resource": "Resource",
+		"industry": ["Workshop", "Factory", "Industrial Complex"],
+		"residential": ["Village", "Town", "City", "Metropolis"]
+	},
 	"ai": {
 		"player_personalities": [
 			"random",
