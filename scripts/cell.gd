@@ -357,18 +357,12 @@ func restore_from_raze() -> void:
 
 func level_name() -> String:
 	match cell_type:
-		CellType.RESOURCE: return "Resource"
+		CellType.RESOURCE:
+			return Config.get_value("cell_names.resource")
 		CellType.INDUSTRY:
-			match cell_level:
-				1: return "Workshop"
-				2: return "Factory"
-				3: return "Industrial Complex"
+			return (Config.get_value("cell_names.industry") as Array)[cell_level - 1]
 		CellType.RESIDENTIAL:
-			match cell_level:
-				1: return "Village"
-				2: return "Town"
-				3: return "City"
-				4: return "Metropolis"
+			return (Config.get_value("cell_names.residential") as Array)[cell_level - 1]
 	return "Unknown"
 
 
